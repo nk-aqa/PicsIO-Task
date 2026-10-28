@@ -1,7 +1,7 @@
 # Pics.io: Saved Searches, Playwright tests
 
 Automated tests for the **Saved Searches** feature of [Pics.io](https://pics.io), written with Playwright and TypeScript.
-They are the second part of the QA test challenge; the testing plan (Part 1) is here: `[link to plan]`.
+They are the second part of the QA test challenge; the testing plan (Part 1) is here: [link to plan](https://docs.google.com/document/d/12ipNYbByTXFW-Dxyqf4OtzSGxmFAynGNlJnZKGsWG_g/edit?usp=sharing).
 
 ## What I chose to test and why
 
