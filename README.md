@@ -31,15 +31,13 @@ I kept the set small on purpose: every test checks one behavior, is independent,
 
 ## Authentication
 
-Authentication was not part of the assignment, so the tests **do not log in**. Also, I used a Google (Gmail) account for the product, and Google OAuth cannot be reliably automated (it blocks automated browsers and may require captcha or 2FA).
+Authentication was not part of the assignment, and the task asked to avoid auth flows, so the tests **do not automate login** and no attempt at login automation is included in this repository.
 
-Because of this, the scenarios start directly on the library page with an already authenticated session:
+I used a Google (Gmail) account for the product. Google OAuth is not a good fit for automation, since it can block automated browsers and may require captcha or 2FA. For this reason, the scenarios start directly on the library page and expect an already authenticated session.
 
-1. Log in manually once (any method, including Google).
-2. Save the session to `auth/storage-state.json` (`npm run auth`, then press Resume in the Playwright Inspector).
-3. Playwright reuses this session in every test through `storageState`.
+How to provide the session: Log in manually once, save the session to auth/storage-state.json, and point storageState in playwright.config.ts to it. The auth/ folder is git-ignored because the file contains session tokens.
 
-`auth/` is in `.gitignore` because the file contains session tokens. The session can expire; in that case repeat `npm run auth`.
+To run the suite, you need your own Pics.io account (a trial account is enough) with an active session prepared in the same way. If the session expires, tests will fail at the first step, so it has to be refreshed manually.
 
 ## Prerequisites
 
